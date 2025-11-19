@@ -422,14 +422,27 @@
     const searchInput = document.getElementById('search');
     const cards = Array.from(document.querySelectorAll('.card'));
 
+    // Pre-compute searchable text for each card (name, title, tags, bio)
+    cards.forEach(card => {
+      const name = card.querySelector('.name')?.innerText.toLowerCase() || '';
+      const title = card.querySelector('.title')?.innerText.toLowerCase() || '';
+      const tags = Array.from(card.querySelectorAll('.tag'))
+        .map(t => t.innerText.toLowerCase())
+        .join(' ');
+      const bio = (card.dataset.bio || '').toLowerCase();
+      card.dataset.searchText = [name, title, tags, bio].join(' ');
+    });
+
+    // Search by partial word across name, title, tags, and bio
     searchInput.addEventListener('keyup', () => {
-      const term = searchInput.value.toLowerCase();
+      const term = searchInput.value.trim().toLowerCase();
       cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(term) ? 'block' : 'none';
+        const text = card.dataset.searchText || '';
+        card.style.display = !term || text.includes(term) ? '' : 'none';
       });
     });
 
+    // Open side panel with details
     cards.forEach(card => {
       card.addEventListener('click', () => {
         document.getElementById('panelAvatar').src = card.querySelector('img').src;
