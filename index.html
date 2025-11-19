@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AluMentor Program Directory</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; width: 100%; height: 100%; }
+    header { background: #8C1D40; color: white; padding: 40px 0; text-align: center; width: 100%; box-sizing: border-box; }
+    h1 { margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; padding: 40px; }
+    .card { background: white; padding: 24px; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+    .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; background: #d9d9d9; }
+    .name { font-size: 20px; font-weight: bold; margin-bottom: 6px; color:#8C1D40; }
+    .title { font-size: 14px; color: #555; margin-bottom: 12px; min-height: 40px; }
+    .tags { display: none; }
+    .tag { background: #FFC627; color:#8C1D40; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight:600; }
+    .linkedin-btn { display:inline-block; margin-top:12px; padding:8px 14px; background:#0A66C2; color:white; border-radius:8px; font-size:13px; text-decoration:none; }
+    .linkedin-btn span { display:flex; align-items:center; gap:6px; justify-content:center; }
+      /* When detail panel is open, shift the grid left so cards are not hidden */
+    body.panel-open .grid {
+      margin-right: 420px; /* roughly the width of the side panel */
+      transition: margin-right 0.3s ease;
+    }
+
+    /* On smaller screens, let the panel overlay instead of shifting */
+    @media (max-width: 900px) {
+      body.panel-open .grid {
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header>
+    <h1>AluMentor Program Directory</h1>
+    <div style="margin-top:12px;">
+      <img src="asu-logo.png" alt="ASU Logo" style="height:60px; object-fit:contain;" />
+    </div>
+    <p style="margin-top:8px;">Browse mentors by expertise, industry, and professional background</p>
+    <input id="search" type="text" placeholder="Search mentors by name, title, company, or tags..." style="margin-top:20px; padding:12px 16px; width:60%; max-width:400px; border-radius:8px; border:1px solid #ccc; font-size:14px;" />
+  </header>
+  
+  <section class="grid" id="mentorGrid">
+
+    <!-- Dhanya Gangapuram -->
+    <div class="card" data-bio="Sridhanya is a strategic procurement and supply chain professional with over four years of global experience across automotive, technology, and manufacturing environments. She has led multimillion-dollar sourcing strategies, optimized supplier negotiations, and built procurement and supply chain functions from the ground up. With expertise spanning IT procurement, inbound logistics, inventory planning, analytics, and sustainability, she has delivered measurable cost savings and operational efficiencies in roles across India, Korea, and the United States. A 2025 graduate of the W. P. Carey MBA program with a focus on Supply Chain Management and Business Analytics, she is passionate about empowering women leaders and advancing sustainable, data-driven procurement practices.">
+      <img class="avatar" src="Dhanya Gangapuram.jpg" alt="Dhanya Gangapuram" />
+      <div class="name">Dhanya Gangapuram</div>
+      <div class="title">Buyer III @ Hyundai AutoEver America</div>
+      <div class="tags">
+        <span class="tag">Procurement</span>
+        <span class="tag">Supply chain</span>
+        <span class="tag">Automotive</span>
+        <span class="tag">Technology</span>
+        <span class="tag">Sustainability</span>
+      </div>
+      <a href="https://LinkedIn.com/in/gdhanya" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Rishi Raval -->
+    <div class="card" data-bio="Rishi is a strategy consultant specializing in biopharma, market analysis, and commercial planning. He currently works as a Senior Consultant at Vault BioVentures, supporting biotech and pharmaceutical clients with strategic insights and launch readiness. His background includes consulting roles focused on life sciences, strategic initiatives at Kaiser Permanente, and earlier experience in clinical data operations. With an MBA from W. P. Carey and a foundation in public health, Rishi brings a structured, analytical, and patient-centered approach to solving complex healthcare and commercialization challenges.">
+      <img class="avatar" src="Rishi Raval.jpg" alt="Rishi Raval" />
+      <div class="name">Rishi Raval</div>
+      <div class="title">Senior Consultant @ Vault BioVentures</div>
+      <div class="tags">
+        <span class="tag">Strategy consulting</span>
+        <span class="tag">Biopharma</span>
+        <span class="tag">Market analysis</span>
+        <span class="tag">Commercial planning</span>
+        <span class="tag">Healthcare</span>
+      </div>
+      <a href="https://www.linkedin.com/in/-rishiraval/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Shri Sahana Jaishankar -->
+
+    <!-- Shri Sahana Jaishankar -->
+    <div class="card" data-bio="Shri is an operations and program management leader with experience across Amazon, Apple, Flipkart, and Hyundai. She has overseen large-scale last-mile delivery operations, nationwide inventory planning, and vendor partnerships that support serviceability across major logistics networks. Her background blends customer experience, supply chain optimization, and cross-functional coordination in both e-commerce and automotive industries. Shri holds an MBA from W. P. Carey and now works at Amazon, focusing on returns, recommerce, and sustainability initiatives.">
+      <img class="avatar" src="Shri Sahana Jaishankar.jpg" alt="Shri Sahana Jaishankar" />
+      <div class="name">Shri Sahana Jaishankar</div>
+      <div class="title">Sr Category Manager at Amazon</div>
+      <div class="tags">
+        <span class="tag">Operations</span>
+        <span class="tag">Program management</span>
+        <span class="tag">Supply chain</span>
+        <span class="tag">E-commerce</span>
+        <span class="tag">Amazon</span>
+      </div>
+      <a href="https://www.linkedin.com/in/shri-sahana/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Karl Heinlein -->
+    <div class="card" data-bio="Karl is an aviation-focused analyst with a background in procurement, fleet operations, education, and public policy. At United Airlines, he supports strategic procurement and operational analysis, bringing a strong foundation in economics, storytelling, and data interpretation. His earlier roles span teaching and policy research, giving him a unique ability to communicate complex ideas with clarity. Karl holds an MBA in Supply Chain and Marketing from W. P. Carey and is passionate about the intersection of aviation, analytics, and customer experience.">
+      <img class="avatar" src="Karl Heinlein.jpg" alt="Karl Heinlein" />
+      <div class="name">Karl Heinlein</div>
+      <div class="title">Senior Analyst – Asset Trading @ United Airlines</div>
+      <div class="tags">
+        <span class="tag">Aviation</span>
+        <span class="tag">Analytics</span>
+        <span class="tag">Procurement</span>
+        <span class="tag">Economics</span>
+      </div>
+      <a href="https://www.linkedin.com/in/karl-heinlein/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Serena Holland -->
+    <div class="card" data-bio="Serena is a marketing and AI professional with a strong foundation in healthcare and consumer engagement. She has worked across digital strategy, brand development, and health communication, contributing to innovative marketing initiatives in both clinical and corporate settings. Her experience includes roles at Insmed, One Medical, and ASU, where she focused on digital campaigns, strategic storytelling, and experience design. Serena holds an MBA in Marketing and Artificial Intelligence from W. P. Carey and brings a human-centered, data-informed approach to her work.">
+      <img class="avatar" src="Serena Holland.jpg" alt="Serena Holland" />
+      <div class="name">Serena Holland</div>
+      <div class="title">Consultant @ Engagys</div>
+      <div class="tags">
+        <span class="tag">Marketing</span>
+        <span class="tag">AI</span>
+        <span class="tag">Healthcare</span>
+        <span class="tag">Digital strategy</span>
+        <span class="tag">Brand</span>
+      </div>
+      <a href="https://www.linkedin.com/in/serenaholland" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Houston Holohan -->
+    <div class="card" data-bio="Houston is a finance and analytics professional with expertise in forecasting, strategic planning, and AI-driven process improvement. He currently serves as a Finance Manager at Microsoft, supporting financial strategy for the FinOps Finance and Data Platform team. His background spans complex program leadership roles at Raytheon, as well as finance internships and research experiences with Boeing and Intel. Houston earned his MBA in Business Analytics and Artificial Intelligence from W. P. Carey and is recognized for his academic excellence and leadership.">
+      <img class="avatar" src="Houston Holohan.jpg" alt="Houston Holohan" />
+      <div class="name">Houston Holohan</div>
+      <div class="title">Finance Manager @ Microsoft</div>
+      <div class="tags">
+        <span class="tag">Finance</span>
+        <span class="tag">Analytics</span>
+        <span class="tag">Forecasting</span>
+        <span class="tag">AI in finance</span>
+        <span class="tag">Microsoft</span>
+      </div>
+      <a href="https://www.linkedin.com/in/houstonholohan" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Anirudh Challa -->
+    <div class="card" data-bio="Anirudh is a product manager with experience across healthcare technology, marketplace platforms, and AI-powered product development. At MedTrans Go, he leads product strategy, roadmap planning, and execution for a rapidly growing medical transportation platform. His background includes roles at Amazon, Pulmonx, and his own startup, giving him a well-rounded perspective on product growth, user experience, and operational efficiency. Anirudh holds an MBA from W. P. Carey and specializes in building scalable, user-centered digital solutions.">
+      <img class="avatar" src="Anirudh Challa.jpg" alt="Anirudh Challa" />
+      <div class="name">Anirudh Challa</div>
+      <div class="title">Product Manager @ MedTrans Go</div>
+      <div class="tags">
+        <span class="tag">Product management</span>
+        <span class="tag">Health tech</span>
+        <span class="tag">Marketplace platforms</span>
+        <span class="tag">AI products</span>
+        <span class="tag">Startups</span>
+      </div>
+      <a href="https://www.linkedin.com/in/anirudhchalla3" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Kelsey Files -->
+    <div class="card" data-bio="Kelsey is a strategy, planning, and operations professional with experience across ed-tech, fintech, higher education, and transportation. She currently serves as a Senior Planning Analyst at Arizona State University, supporting enterprise-level planning and organizational decision-making. Previously, she worked at Upgrade as the first analyst in her department, where she built reporting systems, led change management, and supported scaling from a $17M to $1B+ product line. With an MBA from W. P. Carey and a strong background in analytics, project management, and stakeholder communication, Kelsey excels in transforming complex data into actionable insights.">
+      <img class="avatar" src="Kelsey Files.jpg" alt="Kelsey Files" />
+      <div class="name">Kelsey Files</div>
+      <div class="title">Sr Planning Analyst @ ASU</div>
+      <div class="tags">
+        <span class="tag">Strategy</span>
+        <span class="tag">Planning & ops</span>
+        <span class="tag">Analytics</span>
+        <span class="tag">Ed-tech</span>
+        <span class="tag">Fintech</span>
+      </div>
+      <a href="https://www.linkedin.com/in/kelsey-files/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Arpita Dey -->
+    <div class="card" data-bio="Arpita is a finance and strategy leader with 14 years of experience across analytics, business operations, and cross-functional problem-solving. Now a Finance Manager at Amazon, she supports FP&A, marketing finance, and strategic modeling across global device teams. Her background includes nearly a decade at TCS delivering insights for global CPG clients, as well as leadership roles in academia and nonprofit consulting. As a Forté Fellow and former MBA Association President, Arpita brings a blend of data-driven decision-making, strategic communication, and leadership experience shaped by work across multiple continents and industries.">
+      <img class="avatar" src="Arpita Dey.jpg" alt="Arpita Dey" />
+      <div class="name">Arpita Dey</div>
+      <div class="title">Finance Manager @ Amazon</div>
+      <div class="tags">
+        <span class="tag">Finance</span>
+        <span class="tag">FP&amp;A</span>
+        <span class="tag">Strategy</span>
+        <span class="tag">Analytics</span>
+        <span class="tag">Leadership</span>
+      </div>
+      <a href="https://www.linkedin.com/in/arpitasdey" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Rufaro Nyoni -->
+    <div class="card" data-bio="Rufaro is a strategy and finance professional with experience across corporate finance, investor relations, business development, and nonprofit leadership. She has managed capital investments, operations, fundraising, and strategic initiatives across organizations in the United States and Africa. Her work spans roles at Sonoco, ASU EdPlus, and Education Matters Africa, supported by earlier leadership positions in academia and student services. A Forté Fellow with an MBA from W. P. Carey, Rufaro brings strengths in problem-solving, cross-functional collaboration, and driving impact for communities and organizations.">
+      <img class="avatar" src="Rufaro Nyoni.jpg" alt="Rufaro Nyoni" />
+      <div class="name">Rufaro Nyoni</div>
+      <div class="title">Project Associate – Finance @ Sonoco</div>
+      <div class="tags">
+        <span class="tag">Corporate finance</span>
+        <span class="tag">Investor relations</span>
+        <span class="tag">Business development</span>
+        <span class="tag">Nonprofit leadership</span>
+      </div>
+      <a href="https://www.linkedin.com/in/rufaro-nyoni/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Samantha Liets -->
+    <div class="card" data-bio="Samantha is a marketing and consulting professional with a strong background in healthcare, data analysis, and project management. Her experience includes consulting engagements with Ignite Healthcare Solutions, developing marketing and analytics strategies at W. P. Carey, and leading operations in clinical settings. She has supported clients through reporting, workflow design, SOP development, and strategic content creation. With an MBA focused on AI, marketing, and consulting, Samantha brings a thoughtful, data-informed perspective to process improvement, communication, and organizational strategy.">
+      <img class="avatar" src="Samantha Liets.jpg" alt="Samantha Liets" />
+      <div class="name">Samantha Liets</div>
+      <div class="title">Project Manager @ AstreaX</div>
+      <div class="tags">
+        <span class="tag">Marketing</span>
+        <span class="tag">Consulting</span>
+        <span class="tag">Healthcare</span>
+        <span class="tag">Data analysis</span>
+        <span class="tag">Project management</span>
+      </div>
+      <a href="https://www.linkedin.com/in/samanthaliets/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Jesus Leon -->
+    <div class="card" data-bio="Jesús is a seasoned analytics and customer experience leader with more than 30 years at American Express. His expertise spans digital experimentation, advanced analytics, customer segmentation, and global acquisition strategy across both consumer and commercial portfolios. Throughout his career, he has built and led high-performing data science teams, driven innovation in digital journey optimization, and partnered with cross-functional leaders to influence growth, engagement, and revenue outcomes worldwide. Jesús brings deep experience in developing analytical roadmaps, elevating customer experiences, and mentoring technical talent.">
+      <img class="avatar" src="Jesús Leon.jpg" alt="Jesús Leon" />
+      <div class="name">Jesús Leon</div>
+      <div class="title">Director @ American Express</div>
+      <div class="tags">
+        <span class="tag">Analytics leadership</span>
+        <span class="tag">Customer experience</span>
+        <span class="tag">Digital experimentation</span>
+        <span class="tag">Data science</span>
+        <span class="tag">Financial services</span>
+      </div>
+      <a href="https://www.linkedin.com/in/jesusleonamex" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Mahalakshmi Ganesan (Maha) -->
+    <div class="card" data-bio="Maha is a sustainability and strategy leader with experience across Accenture Strategy, McKinsey & Company, and global social impact organizations. She works at the intersection of climate innovation, technology, and business transformation, leading projects on ESG strategy, AI-enabled solutions, and sustainable operations. Her career includes consulting across tech, public sector, and financial services, as well as managing large-scale social impact initiatives in India. A Forté Fellow and first-generation MBA from W. P. Carey, Maha brings a multidisciplinary background in engineering, business, and community leadership, driven by her passion for purpose-aligned problem-solving.">
+      <img class="avatar" src="Mahalakshmi Ganesan.jpg" alt="Mahalakshmi Ganesan" />
+      <div class="name">Mahalakshmi Ganesan</div>
+      <div class="title">Strategy & Sustainability Leader</div>
+      <div class="tags">
+        <span class="tag">Sustainability</span>
+        <span class="tag">Strategy consulting</span>
+        <span class="tag">Climate innovation</span>
+        <span class="tag">ESG</span>
+        <span class="tag">AI solutions</span>
+      </div>
+      <a href="https://www.linkedin.com/in/maha-ganesan/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Derek Foehrkolb -->
+    <div class="card" data-bio="Derek is a supply chain and operations professional currently supporting global supply and demand planning at Apple. His experience spans roles in service supply chain management, inventory analysis, warehouse operations, and corporate policy within industries ranging from technology to consumer goods. With additional leadership experience from the Army National Guard and early roles in public service and research, he brings a disciplined, analytical, and service-oriented mindset to problem-solving. Derek holds an MBA in Supply Chain Management from W. P. Carey and is passionate about building resilient, data-driven supply networks.">
+      <img class="avatar" src="Derek Foehrkolb.jpg" alt="Derek Foehrkolb" />
+      <div class="name">Derek Foehrkolb</div>
+      <div class="title">Supply Demand Planner @ Apple</div>
+      <div class="tags">
+        <span class="tag">Supply chain</span>
+        <span class="tag">Demand planning</span>
+        <span class="tag">Operations</span>
+        <span class="tag">Inventory management</span>
+        <span class="tag">Apple</span>
+      </div>
+      <a href="https://www.linkedin.com/in/derek-foehrkolb/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Christopher Carpentier -->
+    <div class="card" data-bio="Christopher is a marketing strategist with over a decade of experience building growth, product marketing, and go-to-market strategies in the B2B technology sector. He has led product marketing for SaaS and hardware solutions at Savi Solutions, Instructure, and Benchmark, driving launches, sales enablement, and competitive intelligence initiatives. His background also includes marketing leadership in higher education partnerships, entrepreneurship programs, and award-winning startup competitions. With an MBA from W. P. Carey, Christopher excels at transforming complex technology concepts into compelling, customer-focused strategies that drive business impact.">
+      <img class="avatar" src="Christopher Carpentier.jpg" alt="Christopher Carpentier" />
+      <div class="name">Christopher Carpentier</div>
+      <div class="title">Strategic Marketing Leader</div>
+      <div class="tags">
+        <span class="tag">Product marketing</span>
+        <span class="tag">B2B SaaS</span>
+        <span class="tag">Go-to-market</span>
+        <span class="tag">Tech marketing</span>
+      </div>
+      <a href="https://www.linkedin.com/in/carpentierchris/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Shival Tailor -->
+    <div class="card" data-bio="Shival is a senior technology and customer delivery leader with more than 15 years at SAP, where he currently heads Customer Delivery Engagement for the Midwest market. He oversees cloud service delivery across major enterprise clients and leads teams responsible for technical service, customer success, and strategic growth initiatives. With prior roles in consulting, technical architecture, and strategic engagements, he brings deep expertise in enterprise cloud, stakeholder management, and operational excellence. Shival holds an MBA from W. P. Carey and is recognized for his people-centered leadership and commitment to continuous improvement.">
+      <img class="avatar" src="Shival Tailor.jpg" alt="Shival Tailor" />
+      <div class="name">Shival Tailor</div>
+      <div class="title">Head of SAP Enterprise Cloud Services Delivery</div>
+      <div class="tags">
+        <span class="tag">Enterprise cloud</span>
+        <span class="tag">Customer delivery</span>
+        <span class="tag">Technology leadership</span>
+        <span class="tag">SAP</span>
+      </div>
+      <a href="https://www.linkedin.com/in/shival" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Jaime Wallitschek -->
+    <div class="card" data-bio="Jaime is an experienced IT project manager with a background across technology, supply chain, manufacturing, real estate, and enterprise services. She has led end-to-end software implementations, systems integrations, and large-scale technology projects at organizations including Armanino and Avnet. Skilled in project delivery, stakeholder coordination, and tools like Microsoft Project, Workday, and Power BI, she brings a structured and collaborative approach to managing complex initiatives. Jaime holds dual Bachelor’s degrees in Accounting and Computer Information Systems from Arizona State University and is committed to continuous learning and community impact through volunteer leadership.">
+      <img class="avatar" src="Jaime Wallitschek.jpg" alt="Jaime Wallitschek" />
+      <div class="name">Jaime Wallitschek</div>
+      <div class="title">Project Manager – IT & Systems</div>
+      <div class="tags">
+        <span class="tag">IT project management</span>
+        <span class="tag">Systems implementation</span>
+        <span class="tag">Supply chain & manufacturing</span>
+        <span class="tag">Real estate tech</span>
+      </div>
+      <a href="https://www.linkedin.com/in/jaime-wallitschek" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+    <!-- Adam Valeiras -->
+    <div class="card" data-bio="Adam is a marketing and product leader in the global games division at Mattel, where he manages strategy and brand development for iconic titles including Scrabble, Pictionary, and major party games. His background spans a decade in film and digital production, where he produced large-scale campaigns for clients like Disney, Google, Netflix, Amazon, and the US Navy. With an MBA from W. P. Carey and a strong foundation in creative storytelling, project management, and consumer insights, Adam brings a unique blend of creative and analytical thinking. He is passionate about building meaningful entertainment experiences and leading cross-functional teams from concept to launch.">
+      <img class="avatar" src="Adam Valeiras.jpg" alt="Adam Valeiras" />
+      <div class="name">Adam Valeiras</div>
+      <div class="title">Brand / Product Manager @ Mattel</div>
+      <div class="tags">
+        <span class="tag">Brand management</span>
+        <span class="tag">Product marketing</span>
+        <span class="tag">Toys & games</span>
+        <span class="tag">Entertainment</span>
+        <span class="tag">Storytelling</span>
+      </div>
+      <a href="https://www.linkedin.com/in/adam-valeiras/" target="_blank" class="linkedin-btn">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h.012C1.817 0 2.333.513 2.333 1.146c0 .632-.516 1.146-1.158 1.146H1.17C.526 2.292 0 1.778 0 1.146zM.167 4h2.2v12h-2.2V4zm4.584 0h2.112v1.633h.03c.294-.558 1.013-1.146 2.085-1.146 2.23 0 2.64 1.47 2.64 3.38V16h-2.2v-7.004c0-1.67-.03-3.82-2.327-3.82-2.33 0-2.685 1.82-2.685 3.7V16h-2.2V4z"/></svg>
+          LinkedIn
+        </span>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- Side detail panel -->
+  <div id="detailPanel" style="position:fixed; top:0; right:-500px; width:400px; height:100%; background:white; box-shadow:-4px 0 10px rgba(0,0,0,0.15); padding:32px; transition:all .3s; overflow-y:auto; z-index:9999;">
+    <button onclick="closePanel()" style="float:right; background:none; border:none; font-size:22px; cursor:pointer;">✕</button>
+    <img id="panelAvatar" src="" style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:16px;" />
+    <h2 id="panelName" style="color:#8C1D40; margin:0 0 10px 0;"></h2>
+    <div id="panelTitle" style="color:#444; margin-bottom:12px;"></div>
+    
+    <div id="panelTags" style="margin-bottom:16px; display:flex; flex-wrap:wrap; gap:6px;"></div>
+    <div id="panelBio" style="font-size:14px; line-height:1.5; margin-bottom:20px;"></div>
+    <a id="panelLinkedIn" href="#" target="_blank" style="display:inline-flex; align-items:center; gap:8px; padding:10px 16px; background:#0A66C2; color:white; border-radius:8px; text-decoration:none; font-size:14px;">
+      LinkedIn Profile
+    </a>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('search');
+    const cards = Array.from(document.querySelectorAll('.card'));
+
+    searchInput.addEventListener('keyup', () => {
+      const term = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(term) ? 'block' : 'none';
+      });
+    });
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        document.getElementById('panelAvatar').src = card.querySelector('img').src;
+        document.getElementById('panelName').innerText = card.querySelector('.name').innerText;
+        document.getElementById('panelTitle').innerText = card.querySelector('.title').innerText;
+        document.getElementById('panelBio').innerText = card.dataset.bio || '';
+        const tagContainer = card.querySelector('.tags');
+        document.getElementById('panelTags').innerHTML = tagContainer ? tagContainer.innerHTML : '';
+        const link = card.querySelector('.linkedin-btn');
+        document.getElementById('panelLinkedIn').href = link ? link.href : '#';
+        document.getElementById('detailPanel').style.right = '0';
+        document.body.classList.add('panel-open');
+      });
+    });
+
+    // Make sure clicking the LinkedIn button does not trigger the card click / panel blink
+    document.querySelectorAll('.linkedin-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+      });
+    });
+
+    function closePanel() {
+      document.getElementById('detailPanel').style.right = '-500px';
+      document.body.classList.remove('panel-open');
+    }
+  </script>
+</body>
+</html>
